@@ -1,0 +1,43 @@
+
+   [
+       {
+         "id": 1,
+         "name": "STAR JUMP",
+         "description": "Jumping jacks consist of jumping by separating the feet and raising the arms above the head, and then returning to the starting position (feet shoulder-width apart and hands behind the back). The faster you change posture, the more intense the exercise will be"
+       },
+       {
+         "id": 2,
+         "name": "ABS",
+         "description": "Abdominal exercises are routines of physical activities that are performed with the aim of toning the muscles in the area. Before toning, it is necessary to eliminate the fat that covers these muscles, through aerobic exercise and a healthy diet."
+
+        },
+       {
+         "id": 3,
+         "name": "SQUAT ON WALL",
+         "description": "Wall squats or Wall Squats basically consist of imitating the position of sitting upright on an imaginary chair. Instead of actually sitting on a support, you should maintain your body weight by tensing the muscles in your legs and glutes."
+        },
+       {
+         "id": 4,
+         "name": "PUSH-UPS",
+         "description": "Push-ups or push-ups are a classic exercise for strength training. In addition to working your pecs, triceps, and anterior delts as major muscles, other muscle groups are intensively engaged to stabilize the rest of the body during exercise."
+       },
+       {
+         "id": 5,
+         "name": "LEG LUNGES",
+         "description": "The lunge is a resistance exercise that can be used to help strengthen your lower body, including your quadriceps, hamstrings, glutes, calves"
+       },       
+      {
+        "id": 5,
+        "name": "DIAMOND BENDING",
+        "description": ""
+      },
+      {
+        "id": 5,
+        "name": "DISCLINED PUSH UPS",
+        "description": ""
+      }
+   
+
+
+   ] 
+    
