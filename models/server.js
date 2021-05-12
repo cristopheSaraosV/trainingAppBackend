@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const routerExercises = require('../routes/exercise.routes');
+const routerParks = require('../routes/parks.routes');
 class Server {
 	constructor() {
 		this.app = express();
 		this.port = process.env.PORT;
 		// Path
 		this.exercisesPath = '/api/exercises';
+		this.parksPath = '/api/parks';
 		// Middleware
 		this.middlewares();
 		// Routes
@@ -22,6 +24,7 @@ class Server {
 	// Routes
 	routes() {
 		this.app.use(this.exercisesPath, routerExercises);
+		this.app.use(this.parksPath, routerParks);
 	}
 
 	listen() {

@@ -1,9 +1,9 @@
 const jsonExercises = require('../public/json/exercises.json');
 
-const userGet = () => {
+const getAllExercises = () => {
 	return jsonExercises;
 };
 
 module.exports = {
-	userGet,
+	getAllExercises,
 };
