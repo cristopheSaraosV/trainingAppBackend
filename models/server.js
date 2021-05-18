@@ -20,9 +20,9 @@ class Server {
 	}
 
 	middlewares() {
-		this.app.use( cors() );
-		this.app.use( express.static('public') );
-		this.app.use( express.json() );
+		this.app.use(cors());
+		this.app.use(express.static('public'));
+		this.app.use(express.json());
 	}
 
 	async connectDB() {
@@ -31,13 +31,13 @@ class Server {
 
 	// Routes
 	routes() {
-		this.app.use(this.exercisesPath, routerExercises );
-		this.app.use(this.parksPath, routerParks );
+		this.app.use(this.exercisesPath, routerExercises);
+		this.app.use(this.parksPath, routerParks);
 	}
 
 	listen() {
-		this.app.listen( this.port, () => {
-			console.log( `server in ${this.port}` );
+		this.app.listen(this.port, () => {
+			console.log(`server in ${this.port}`);
 		});
 	}
 }
