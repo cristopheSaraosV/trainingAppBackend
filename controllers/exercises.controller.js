@@ -15,7 +15,10 @@ const saveExercise = async  (req = request, res = response) => {
 	const {name, description} = req.body
 	const exercise = new Exercise({name,description});
 	await exercise.save()
-	res.json(exercise);
+	res.json({
+		"status":true,
+		"msg":"Exercise saved correctly"
+	,...exercise});
 };
 
 const updateExercise = async  (req = request, res = response) => {	
@@ -24,7 +27,10 @@ const updateExercise = async  (req = request, res = response) => {
 	const { name, description, ...resto } = req.body;
 	const exercise = await Exercise.findByIdAndUpdate( id, { name, description } );
 
-	res.json(exercise);
+	res.json({
+		"status":true,
+		"msg":"Exercise saved correctly"
+	,...exercise});
 };
 
 
