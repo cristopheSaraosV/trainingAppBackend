@@ -29,5 +29,13 @@ routerParks.put(`/:id`,[
 ],parksControllers.updatePark);
 
 
+routerParks.delete(`/:id`,[
+    check('id','It is not a valid ID').isMongoId(),
+    check('id').custom(existParkById),
+    validateFields
+],
+parksControllers.deletePark
+)
+
 
 module.exports = routerParks;

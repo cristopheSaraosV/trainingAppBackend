@@ -34,11 +34,21 @@ const updateExercise = async  (req = request, res = response) => {
 };
 
 
+const deleteExercise = async (req = request, res = response ) => {
+	const { id } = req.params;
+	const exercise = await Exercise.findByIdAndDelete(id);
 
+	res.json({
+		status:true,
+		"msg":"Eliminated exercise",
+		exercise 
+	})
+}
 
 module.exports = {
 	
 	saveExercise,
 	updateExercise,
-	getAllExercises
+	getAllExercises,
+	deleteExercise
 };

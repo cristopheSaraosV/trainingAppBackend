@@ -25,7 +25,7 @@ const savePark = async (req = request, res = request) => {
 }
 
 const getAllParks = async (req = request, res = response) => {
-	const park = await Park.find();
+	const park = await Park.find(); 
 	res.json(park);
 };
 
@@ -34,10 +34,24 @@ const updatePark = async (req = request, res = response ) => {
 	const { name, city, region, urlDirection, ...resto } = req.body;
 	const park = await Park.findByIdAndUpdate( id, {name, city, region, urlDirection });
 	res.json(park)
+	
+}
+
+const deletePark = async ( req = request, res = response) => {
+	
+	const { id } = req.params;
+	const park = await Park.findByIdAndDelete(id);
+
+	res.json({
+		status:true,
+		"msg":"Eliminated park",
+		park 
+	})
 }
 
 module.exports = {
 	getAllParks,
 	savePark,
-	updatePark
+	updatePark,
+	deletePark
 };

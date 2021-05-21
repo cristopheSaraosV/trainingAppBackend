@@ -22,6 +22,11 @@ routerExercises.put(`/:id`,[
     validateFields
 ],exerciseControllers.updateExercise);
 
+routerExercises.delete('/:id',[
+    check('id','It is not a valid ID').isMongoId(),
+    check('id').custom(existExerciseById),
+    validateFields
+],exerciseControllers.deleteExercise)
 
 
 module.exports = routerExercises;
