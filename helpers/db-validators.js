@@ -1,6 +1,6 @@
 const Exercise = require('../models/exercises');
 const Park = require('../models/parks');
-const User = require('../models/User');
+const User = require('../models/user');
 const Rol = require('../models/rols');
 
 const existExerciseByName = async  (name = '') => {
