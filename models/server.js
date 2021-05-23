@@ -3,6 +3,7 @@ const cors = require('cors');
 const routerExercises = require('../routes/exercise.routes');
 const routerParks = require('../routes/parks.routes');
 const routerUser = require('../routes/users.routes');
+const routerAuth = require('../routes/auth.routes');
 const { dbConnection } = require('../database/config.database');
 
 class Server {
@@ -13,6 +14,7 @@ class Server {
 		this.connectDB();
 		// Path
 		this.exercisesPath = '/api/exercises';
+		this.authPath = '/api/auth';
 		this.parksPath = '/api/parks';
 		this.usersPath = '/api/users';
 		// Middleware
@@ -36,6 +38,7 @@ class Server {
 		this.app.use(this.exercisesPath, routerExercises);
 		this.app.use(this.parksPath, routerParks);
 		this.app.use(this.usersPath, routerUser);
+		this.app.use(this.authPath, routerAuth);
 	}
 
 	listen() {
