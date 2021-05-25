@@ -4,6 +4,7 @@ const routerExercises = require('../routes/exercise.routes');
 const routerParks = require('../routes/parks.routes');
 const routerUser = require('../routes/users.routes');
 const routerAuth = require('../routes/auth.routes');
+const rolesAuth = require('../routes/rols.routes');
 const { dbConnection } = require('../database/config.database');
 
 class Server {
@@ -17,6 +18,7 @@ class Server {
 		this.authPath = '/api/auth';
 		this.parksPath = '/api/parks';
 		this.usersPath = '/api/users';
+		this.rolesPath = '/api/roles';
 		// Middleware
 		this.middlewares();
 		// Routes
@@ -39,6 +41,7 @@ class Server {
 		this.app.use(this.parksPath, routerParks);
 		this.app.use(this.usersPath, routerUser);
 		this.app.use(this.authPath, routerAuth);
+		this.app.use(this.rolesPath, rolesAuth);
 	}
 
 	listen() {
