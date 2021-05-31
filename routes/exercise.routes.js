@@ -16,6 +16,8 @@ routerExercises.post(`/`,[
     check('name','The name is required').not().isEmpty(),
     check('description','The description of the exercise is not valid').isString(),
     check('description','The description is required').not().isEmpty(),
+    check('urlImg','The urlImg of the exercise is not valid').isString(),
+    check('urlImg','The urlImg is required').not().isEmpty(),
     check('name').custom(existExerciseByName),
     validateFields
 ],saveExercise);

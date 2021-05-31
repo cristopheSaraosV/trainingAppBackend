@@ -10,6 +10,10 @@ const ExerciseSchema = Schema({
     description:{
         type:String,
         required: [true, 'description is required']
+    },
+    urlImg:{
+        type:String,
+        required: [true, 'The URL of the IMG is required']
     }
 
 });
