@@ -4,14 +4,17 @@ const bcryptjs = require('bcryptjs');
 
 const saveUser = async (req = request, res = response) => {
 	const { name, email, password, rol, ...resto } = req.body;
+
 	const user = new User({ name, email, password, rol });
 
 	const existEmail = await User.findOne({ email });
+
 	if (existEmail) {
 		return res.status(400).json({
 			msg: 'Email is already registered',
 		});
 	}
+	
 	const salt = bcryptjs.genSaltSync();
 	user.password = bcryptjs.hashSync(password, salt);
 	user.save();

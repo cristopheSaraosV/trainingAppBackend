@@ -18,6 +18,10 @@ const ParksSchema = Schema({
     urlDirection:{
         type:String,
         required: [true,'urlDirection is required']
+    },
+    urlImg:{
+        type:String,
+        required: [true,'urlImg is required']
     }
 });
 

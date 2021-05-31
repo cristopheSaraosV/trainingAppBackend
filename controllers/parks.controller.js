@@ -18,8 +18,8 @@ const Park = require('../models/parks');
 
 const savePark = async (req = request, res = request) => {
 
-	const {name, city, region, urlDirection, ...resto} = req.body
-	const park = new Park({name, city, region, urlDirection});
+	const {name, city, region, urlDirection,urlImg , ...resto} = req.body
+	const park = new Park({name, city, region, urlDirection,urlImg});
 	await park.save()
 	res.json(park);
 }
@@ -31,7 +31,7 @@ const getAllParks = async (req = request, res = response) => {
 
 const updatePark = async (req = request, res = response ) => {
 	const { id } = req.params;
-	const { name, city, region, urlDirection, ...resto } = req.body;
+	const { name, city, region, urlDirection, urlImg, ...resto } = req.body;
 	const park = await Park.findByIdAndUpdate( id, {name, city, region, urlDirection });
 	res.json(park)
 	

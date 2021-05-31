@@ -22,6 +22,8 @@ routerParks.post('/', [
     check('region','The description is required').not().isEmpty(),
     check('urlDirection','The description of the exercise is not valid').isString(),
     check('urlDirection','The description is required').not().isEmpty(),
+    check('urlImg','The img of the exercise is not valid').isString(),
+    check('urlImg','The img is required').not().isEmpty(),
     check('name').custom(existParkByName),
     validateFields   
 ],savePark)
